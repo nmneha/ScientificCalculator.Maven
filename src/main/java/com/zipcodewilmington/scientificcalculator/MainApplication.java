@@ -57,6 +57,27 @@ public class MainApplication {
         public static double sin(double d) {
             return java.lang.Math.sin(d);
         }
+
+        public static double cos(double d) {
+            return java.lang.Math.cos(d);
+        }
+
+        public static double tan(double d) {
+            return java.lang.Math.tan(d);
+        }
+
+        public static double invsin(double d) {
+            return java.lang.Math.asin(d);
+        }
+
+        public static double invtan(double d) {
+            return java.lang.Math.atan(d);
+        }
+
+        public static double invcos(double d) {
+            return java.lang.Math.acos(d);
+        }
+
     }
 
 }

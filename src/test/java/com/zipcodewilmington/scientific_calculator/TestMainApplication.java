@@ -100,6 +100,44 @@ public class TestMainApplication {
         Assert.assertEquals(expected, actual);
     }
 
+    @Test
+    public void cosTest(){
+        double d = 3;
+        double expected = -0.9899924966004454 ;
+        double actual = scientific.cos(d);
+        Assert.assertEquals(expected, actual);
+    }
 
+    @Test
+    public void tanTest(){
+        double d = 3;
+        double expected = -0.1425465430742778 ;
+        double actual = scientific.tan(d);
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void invsinTest(){
+        double d = 0.5;
+        double expected = 0.5235987755982989 ;
+        double actual = scientific.invsin(d);
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void invtanTest(){
+        double d = 0.5;
+        double expected = 0.4636476090008061 ;
+        double actual = scientific.invtan(d);
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void invcosTest(){
+        double d = 0.5;
+        double expected = 1.0471975511965979 ;
+        double actual = scientific.invcos(d);
+        Assert.assertEquals(expected, actual);
+    }
 
 }
