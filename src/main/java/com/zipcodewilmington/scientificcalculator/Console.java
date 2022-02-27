@@ -81,7 +81,12 @@ public class Console {
     public static class Scientific extends Console {
 
         public static double sin(double d) {
-            return java.lang.Math.sin(d);
+            if(MainApplication.radDeg == 0) {
+                return java.lang.Math.sin(d);
+            } else {
+                d = Math.toRadians(d);
+                return java.lang.Math.sin(d);
+            }
         }
 
         public static double cos(double d) {
