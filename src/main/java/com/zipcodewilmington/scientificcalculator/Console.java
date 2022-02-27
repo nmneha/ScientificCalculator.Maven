@@ -67,16 +67,13 @@ public class Console {
 
     public static class Scientific extends Console {
 
-        public static String radDeg(String s) {
-            String radDeg
-            if (s.equals("rad")) {
-               String radDeg = "RAD";
-            } else{
-               String radDeg = "DEG";
-            }
-
-            return radDeg;
+        String s;
+       if (s.equals("rad")) {
+           int radDeg = 0;
+        } else if(s.equals("deg")) {
+           int radDeg = 1;
         }
+
 
         public static double sin(double d) {
             return java.lang.Math.sin(d);
