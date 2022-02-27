@@ -68,8 +68,14 @@ public class Console {
     public static class Scientific extends Console {
 
         public static String radDeg(String s) {
-            String radDeg = null;
+            String radDeg
+            if (s.equals("rad")) {
+               String radDeg = "RAD";
+            } else{
+               String radDeg = "DEG";
+            }
 
+            return radDeg;
         }
 
         public static double sin(double d) {
