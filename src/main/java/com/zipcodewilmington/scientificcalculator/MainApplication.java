@@ -2,6 +2,8 @@ package com.zipcodewilmington.scientificcalculator;
 
 import sun.applet.Main;
 
+import java.math.BigInteger;
+
 /**
  * Created by leon on 2/9/18.
  */
@@ -77,6 +79,29 @@ public class MainApplication {
         public static double invcos(double d) {
             return java.lang.Math.acos(d);
         }
+
+        public static double ln(double d) {
+            return java.lang.Math.log(d);
+        }
+
+        public static double log10(double d) {
+            return java.lang.Math.log10(d);
+        }
+
+        public static double invlog10(double d) {
+            return java.lang.Math.pow(10, d);
+        }
+
+        public static double invln(double d) {
+            return java.lang.Math.exp(d);
+        }
+
+         public static BigInteger factorial(double d) {
+                BigInteger factorial = BigInteger.ONE;
+                for (int i = 2; i <= d; i++)
+                    factorial = factorial.multiply(BigInteger.valueOf(i));
+                return factorial;
+            }
 
     }
 

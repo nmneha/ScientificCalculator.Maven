@@ -4,7 +4,7 @@ import com.zipcodewilmington.scientificcalculator.MainApplication;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import static jdk.nashorn.internal.objects.Global.Infinity;
+import java.math.BigInteger;
 
 /**
  * Created by leon on 2/9/18.
@@ -139,5 +139,45 @@ public class TestMainApplication {
         double actual = scientific.invcos(d);
         Assert.assertEquals(expected, actual);
     }
+
+    @Test
+    public void lnTest(){
+        double d = 5;
+        double expected = 1.6094379124341003 ;
+        double actual = scientific.ln(d);
+        Assert.assertEquals(expected, actual);
+    }
+    @Test
+    public void log10Test(){
+        double d = 5;
+        double expected = 0.6989700043360189 ;
+        double actual = scientific.log10(d);
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void invlog10Test(){
+        double d = 3;
+        double expected = 1000 ;
+        double actual = scientific.invlog10(d);
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void invlnTest(){
+        double d = 3;
+        double expected = 20.085536923187668 ;
+        double actual = scientific.invln(d);
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void factorialTest(){
+        double d = 5;
+        BigInteger expected = BigInteger.valueOf(120);
+        BigInteger actual = scientific.factorial(d);
+        Assert.assertEquals(expected, actual);
+    }
+
 
 }
