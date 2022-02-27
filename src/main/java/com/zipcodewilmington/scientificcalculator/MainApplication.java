@@ -1,12 +1,7 @@
 package com.zipcodewilmington.scientificcalculator;
 
-import sun.applet.Main;
-
 import java.math.BigInteger;
 
-import static com.zipcodewilmington.scientificcalculator.Console.Basic.*;
-import static com.zipcodewilmington.scientificcalculator.Console.Scientific.sin;
-import static java.lang.Double.NaN;
 import static jdk.nashorn.internal.objects.Global.Infinity;
 
 /**
@@ -17,6 +12,8 @@ public class MainApplication {
     public static int radDeg = 0;
 
     public static void main(String[] args) {
+        Scientific scientificCalc = new Scientific();
+        Basic basicCalculator = new Basic();
         String s = "on";
         while (!s.equals("off")) {
             Console.println("Welcome to my calculator!");
@@ -35,21 +32,21 @@ public class MainApplication {
             String displayText = null;
 
             if (s.equals("add")) {
-                displayNum = add(d, d2);
+                displayNum = basicCalculator.add(d, d2);
             } else if (s.equals("subtract")) {
-                displayNum = sub(d, d2);
+                displayNum = basicCalculator.sub(d, d2);
             } else if (s.equals("multiply")) {
-                displayNum = mul(d, d2);
+                displayNum = basicCalculator.mul(d, d2);
             } else if (s.equals("divide")) {
-                displayNum = div(d, d2);
+                displayNum = basicCalculator.div(d, d2);
             } else if (s.equals("square")) {
-                displayNum = sq(d);
+                displayNum = basicCalculator.sq(d);
             } else if (s.equals("square root")) {
-                displayNum = sqrt(d);
+                displayNum = basicCalculator.sqrt(d);
             } else if (s.equals("exponent")) {
-                displayNum = pow(d, d2);
+                displayNum = basicCalculator.pow(d, d2);
             } else if (s.equals("sin")) {
-                displayNum = sin(d);
+                displayNum = scientificCalc.sin(d);
             } else if (s.equals("rad")) {
                 radDeg = 0;
             } else if (s.equals("deg")) {

@@ -1,7 +1,9 @@
 package com.zipcodewilmington.scientific_calculator;
 
+import com.zipcodewilmington.scientificcalculator.Basic;
 import com.zipcodewilmington.scientificcalculator.Console;
 import com.zipcodewilmington.scientificcalculator.MainApplication;
+import com.zipcodewilmington.scientificcalculator.Scientific;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -11,7 +13,8 @@ import java.math.BigInteger;
  * Created by leon on 2/9/18.
  */
 public class TestMainApplication {
-    Console.Basic basic = new Console.Basic();
+    Basic basicTest = new Basic();
+    Scientific scientificTest = new Scientific();
 
     @Test
     public void addTest(){
@@ -19,7 +22,7 @@ public class TestMainApplication {
         double d = 4.1,
                 d2 = 10;
         double expected = 14.1;
-        double actual = basic.add(d, d2);
+        double actual = basicTest.add(d, d2);
         Assert.assertEquals(expected, actual);
     }
 
@@ -28,7 +31,7 @@ public class TestMainApplication {
         double d = 4,
                 d2 = 10;
         double expected = -6;
-        double actual = basic.sub(d, d2);
+        double actual = basicTest.sub(d, d2);
         Assert.assertEquals(expected, actual);
     }
 
@@ -37,7 +40,7 @@ public class TestMainApplication {
         double d = 4,
                 d2 = 10;
         double expected = 40;
-        double actual = basic.mul(d, d2);
+        double actual = basicTest.mul(d, d2);
         Assert.assertEquals(expected, actual);
     }
 
@@ -46,7 +49,7 @@ public class TestMainApplication {
         double d = 1,
                 d2 = 4;
         double expected = .25;
-        double actual = basic.div(d, d2);
+        double actual = basicTest.div(d, d2);
         Assert.assertEquals(expected, actual);
     }
 
@@ -54,7 +57,7 @@ public class TestMainApplication {
     public void sqTest(){
         double d = 3;
         double expected = 9;
-        double actual = basic.sq(d);
+        double actual = basicTest.sq(d);
         Assert.assertEquals(expected, actual);
     }
 
@@ -62,7 +65,7 @@ public class TestMainApplication {
     public void sqrtTest(){
         double d = 36;
         double expected = 6;
-        double actual = basic.sqrt(d);
+        double actual = basicTest.sqrt(d);
         Assert.assertEquals(expected, actual);
     }
 
@@ -71,7 +74,7 @@ public class TestMainApplication {
         double d = 6,
                 d2 = 4;
         double expected = 1296;
-        double actual = basic.pow(d, d2);
+        double actual = basicTest.pow(d, d2);
         Assert.assertEquals(expected, actual);
     }
 
@@ -79,7 +82,7 @@ public class TestMainApplication {
     public void inexpoTest(){
         double d = 3;
         double expected = 0.3333333333333333 ;
-        double actual = basic.inexpo(d);
+        double actual = basicTest.inexpo(d);
         Assert.assertEquals(expected, actual);
     }
 
@@ -87,17 +90,17 @@ public class TestMainApplication {
     public void sswitchTest(){
         double d = -3;
         double expected = 3 ;
-        double actual = basic.sswitch(d);
+        double actual = basicTest.sswitch(d);
         Assert.assertEquals(expected, actual);
     }
 
-    Console.Scientific scientific = new Console.Scientific();
+
 
     @Test
     public void sinTest(){
         double d = 3;
         double expected = 0.1411200080598672 ;
-        double actual = scientific.sin(d);
+        double actual = scientificTest.sin(d);
         Assert.assertEquals(expected, actual);
     }
 
@@ -105,7 +108,7 @@ public class TestMainApplication {
     public void cosTest(){
         double d = 3;
         double expected = -0.9899924966004454 ;
-        double actual = scientific.cos(d);
+        double actual = scientificTest.cos(d);
         Assert.assertEquals(expected, actual);
     }
 
@@ -113,7 +116,7 @@ public class TestMainApplication {
     public void tanTest(){
         double d = 3;
         double expected = -0.1425465430742778 ;
-        double actual = scientific.tan(d);
+        double actual = scientificTest.tan(d);
         Assert.assertEquals(expected, actual);
     }
 
@@ -121,7 +124,7 @@ public class TestMainApplication {
     public void invsinTest(){
         double d = 0.5;
         double expected = 0.5235987755982989 ;
-        double actual = scientific.invsin(d);
+        double actual = scientificTest.invsin(d);
         Assert.assertEquals(expected, actual);
     }
 
@@ -129,7 +132,7 @@ public class TestMainApplication {
     public void invtanTest(){
         double d = 0.5;
         double expected = 0.4636476090008061 ;
-        double actual = scientific.invtan(d);
+        double actual = scientificTest.invtan(d);
         Assert.assertEquals(expected, actual);
     }
 
@@ -137,7 +140,7 @@ public class TestMainApplication {
     public void invcosTest(){
         double d = 0.5;
         double expected = 1.0471975511965979 ;
-        double actual = scientific.invcos(d);
+        double actual = scientificTest.invcos(d);
         Assert.assertEquals(expected, actual);
     }
 
@@ -145,14 +148,14 @@ public class TestMainApplication {
     public void lnTest(){
         double d = 5;
         double expected = 1.6094379124341003 ;
-        double actual = scientific.ln(d);
+        double actual = scientificTest.ln(d);
         Assert.assertEquals(expected, actual);
     }
     @Test
     public void log10Test(){
         double d = 5;
         double expected = 0.6989700043360189 ;
-        double actual = scientific.log10(d);
+        double actual = scientificTest.log10(d);
         Assert.assertEquals(expected, actual);
     }
 
@@ -160,7 +163,7 @@ public class TestMainApplication {
     public void invlog10Test(){
         double d = 3;
         double expected = 1000 ;
-        double actual = scientific.invlog10(d);
+        double actual = scientificTest.invlog10(d);
         Assert.assertEquals(expected, actual);
     }
 
@@ -168,7 +171,7 @@ public class TestMainApplication {
     public void invlnTest(){
         double d = 3;
         double expected = 20.085536923187668 ;
-        double actual = scientific.invln(d);
+        double actual = scientificTest.invln(d);
         Assert.assertEquals(expected, actual);
     }
 
@@ -176,7 +179,7 @@ public class TestMainApplication {
     public void factorialTest(){
         double d = 5;
         BigInteger expected = BigInteger.valueOf(120);
-        BigInteger actual = scientific.factorial(d);
+        BigInteger actual = scientificTest.factorial(d);
         Assert.assertEquals(expected, actual);
     }
 
