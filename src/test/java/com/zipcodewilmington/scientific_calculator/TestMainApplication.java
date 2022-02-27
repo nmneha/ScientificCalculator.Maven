@@ -1,5 +1,6 @@
 package com.zipcodewilmington.scientific_calculator;
 
+import com.zipcodewilmington.scientificcalculator.Console;
 import com.zipcodewilmington.scientificcalculator.MainApplication;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -10,7 +11,7 @@ import java.math.BigInteger;
  * Created by leon on 2/9/18.
  */
 public class TestMainApplication {
-    MainApplication.Basic basic = new MainApplication.Basic();
+    Console.Basic basic = new Console.Basic();
 
     @Test
     public void addTest(){
@@ -90,7 +91,7 @@ public class TestMainApplication {
         Assert.assertEquals(expected, actual);
     }
 
-    MainApplication.Scientific scientific = new MainApplication.Scientific();
+    Console.Scientific scientific = new Console.Scientific();
 
     @Test
     public void sinTest(){
