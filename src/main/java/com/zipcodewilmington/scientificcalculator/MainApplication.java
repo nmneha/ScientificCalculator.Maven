@@ -32,6 +32,10 @@ public class MainApplication {
                     "san, " +
                     "cos, " +
                     "tan, " +
+                    "ln, " +
+                    "log, " +
+                    "10^x, " +
+                    "e^x, " +
                     "M+, " +
                     "MC, " +
                     "MRC, " +
@@ -73,9 +77,9 @@ public class MainApplication {
                 displayNum = scientificCalc.ln(d);
             } else if (s.equals("log")) {
                 displayNum = scientificCalc.log10(d);
-            } else if (s.equals("inverse ln")) {
+            } else if (s.equals("e^x")) {
                 displayNum = scientificCalc.invln(d);
-            } else if (s.equals("inverse  log")) {
+            } else if (s.equals("10^x")) {
                 displayNum = scientificCalc.invlog10(d);
             }else if (s.equals("!")) {
                 displayNumBig = scientificCalc.factorial(d);
