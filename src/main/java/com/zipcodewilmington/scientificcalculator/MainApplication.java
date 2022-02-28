@@ -61,7 +61,15 @@ public class MainApplication {
                 displayNum = scientificCalc.cos(d);
             } else if (s.equals("tan")) {
                 displayNum = scientificCalc.tan(d);
-            } else if (s.equals("!")) {
+            } else if (s.equals("ln")) {
+                displayNum = scientificCalc.ln(d);
+            } else if (s.equals("log")) {
+                displayNum = scientificCalc.log10(d);
+            } else if (s.equals("inverse ln")) {
+                displayNum = scientificCalc.invln(d);
+            } else if (s.equals("inverse log")) {
+                displayNum = scientificCalc.invlog10(d);
+            }else if (s.equals("!")) {
                 displayNumBig = scientificCalc.factorial(d);
             } else if (s.equals("rad")) {
                 radDeg = 0;

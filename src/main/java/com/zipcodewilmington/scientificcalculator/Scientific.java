@@ -14,28 +14,50 @@ public class Scientific {
     }
 
     public  double cos(double d) {
-
-        return java.lang.Math.cos(d);
+        if(MainApplication.radDeg == 0) {
+            return java.lang.Math.cos(d);
+        } else {
+            d = Math.toRadians(d);
+            return java.lang.Math.cos(d);
+        }
     }
 
     public  double tan(double d) {
+        if(MainApplication.radDeg == 0) {
+            return java.lang.Math.tan(d);
+        } else {
+            d = Math.toRadians(d);
 
-        return java.lang.Math.tan(d);
+            return java.lang.Math.tan(d);
+        }
     }
 
     public  double invsin(double d) {
+        if(MainApplication.radDeg == 0) {
+            return java.lang.Math.asin(d);
+        } else {
+            d = Math.toRadians(d);
 
-        return java.lang.Math.asin(d);
+            return java.lang.Math.asin(d);
+        }
     }
 
     public  double invtan(double d) {
-
-        return java.lang.Math.atan(d);
+        if(MainApplication.radDeg == 0) {
+            return java.lang.Math.atan(d);
+        } else {
+            d = Math.toRadians(d);
+            return java.lang.Math.atan(d);
+        }
     }
 
     public  double invcos(double d) {
-
-        return java.lang.Math.acos(d);
+        if(MainApplication.radDeg == 0) {
+            return java.lang.Math.acos(d);
+        } else {
+            d = Math.toRadians(d);
+            return java.lang.Math.acos(d);
+        }
     }
 
     public  double ln(double d) {
