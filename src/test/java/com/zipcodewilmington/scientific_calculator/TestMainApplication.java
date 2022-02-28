@@ -97,49 +97,109 @@ public class TestMainApplication {
 
 
     @Test
-    public void sinTest(){
+    public void radSinTest(){
         double d = 3;
+        MainApplication.radDeg = 0;
         double expected = 0.1411200080598672 ;
         double actual = scientificTest.sin(d);
         Assert.assertEquals(expected, actual);
     }
 
     @Test
-    public void cosTest(){
+    public void degSinTest(){
         double d = 3;
+        MainApplication.radDeg = 1;
+        double expected = 0.05233595624294383 ;
+        double actual = scientificTest.sin(d);
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void radCosTest(){
+        double d = 3;
+        MainApplication.radDeg = 0;
         double expected = -0.9899924966004454 ;
         double actual = scientificTest.cos(d);
         Assert.assertEquals(expected, actual);
     }
 
     @Test
-    public void tanTest(){
+    public void degCosTest(){
         double d = 3;
+        MainApplication.radDeg = 1;
+        double expected = 0.9986295347545738 ;
+        double actual = scientificTest.cos(d);
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void radTanTest(){
+        double d = 3;
+        MainApplication.radDeg = 0;
         double expected = -0.1425465430742778 ;
         double actual = scientificTest.tan(d);
         Assert.assertEquals(expected, actual);
     }
 
     @Test
-    public void invsinTest(){
+    public void degTanTest(){
+        double d = 3;
+        MainApplication.radDeg = 1;
+        double expected = 0.052407779283041196 ;
+        double actual = scientificTest.tan(d);
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void radInvsinTest(){
         double d = 0.5;
+        MainApplication.radDeg = 0;
         double expected = 0.5235987755982989 ;
         double actual = scientificTest.invsin(d);
         Assert.assertEquals(expected, actual);
     }
 
     @Test
-    public void invtanTest(){
+    public void degInvsinTest(){
         double d = 0.5;
+        MainApplication.radDeg = 1;
+        double expected = 00.008726757025787037 ;
+        double actual = scientificTest.invsin(d);
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void radInvtanTest(){
+        double d = 0.5;
+        MainApplication.radDeg = 0;
         double expected = 0.4636476090008061 ;
         double actual = scientificTest.invtan(d);
         Assert.assertEquals(expected, actual);
     }
 
     @Test
-    public void invcosTest(){
+    public void degInvtanTest(){
         double d = 0.5;
+        MainApplication.radDeg = 1;
+        double expected = 0.008726424746054184 ;
+        double actual = scientificTest.invtan(d);
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void radInvcosTest(){
+        double d = 0.5;
+        MainApplication.radDeg = 0;
         double expected = 1.0471975511965979 ;
+        double actual = scientificTest.invcos(d);
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void degInvcosTest(){
+        double d = 0.5;
+        MainApplication.radDeg = 1;
+        double expected = 1.5620695697691096 ;
         double actual = scientificTest.invcos(d);
         Assert.assertEquals(expected, actual);
     }

@@ -10,6 +10,11 @@ import static jdk.nashorn.internal.objects.Global.Infinity;
 public class MainApplication {
 
     public static int radDeg = 0;
+    public static double displayNum = (0);
+    public static BigInteger displayNumBig = BigInteger.valueOf(0);
+    public static String displayText = null;
+    public static double memory = 0;
+
 
     public static void main(String[] args) {
         Scientific scientificCalc = new Scientific();
@@ -27,6 +32,9 @@ public class MainApplication {
                     "san, " +
                     "cos, " +
                     "tan, " +
+                    "M+, " +
+                    "MC, " +
+                    "MRC, " +
                     "OFF.");
             // Integer i = Console.getIntegerInput("Enter an integer");
             double d = Console.getDoubleInput("Enter a double.");
@@ -37,9 +45,9 @@ public class MainApplication {
             // Console.println("The user input %s as a d", d);
             // Console.println("The user input %s as a d2", d2);
 
-            double displayNum = 0;
-            BigInteger displayNumBig = BigInteger.valueOf(0);
-            String displayText = null;
+//            double displayNum = (0);
+//            BigInteger displayNumBig = BigInteger.valueOf(0);
+//            String displayText = null;
 
             if (s.equals("add")) {
                 displayNum = basicCalculator.add(d, d2);
@@ -67,7 +75,7 @@ public class MainApplication {
                 displayNum = scientificCalc.log10(d);
             } else if (s.equals("inverse ln")) {
                 displayNum = scientificCalc.invln(d);
-            } else if (s.equals("inverse log")) {
+            } else if (s.equals("inverse  log")) {
                 displayNum = scientificCalc.invlog10(d);
             }else if (s.equals("!")) {
                 displayNumBig = scientificCalc.factorial(d);
@@ -75,8 +83,14 @@ public class MainApplication {
                 radDeg = 0;
             } else if (s.equals("deg")) {
                 radDeg = 1;
+            } else if (s.equals("M+")) {
+                memory = displayNum;
+            } else if (s.equals("MC")) {
+                memory = 0;
+            } else if (s.equals("clear")) {
+                displayNum = 0;
             } else {
-                displayNum = 7;
+                displayNum = 0;
             }
 
 
@@ -86,6 +100,14 @@ public class MainApplication {
                 System.out.println("err");
             } else if (s.equals("!")) {
                 System.out.println(displayNumBig);
+            } else if (s.equals("get display")) {
+                System.out.println(displayNum);
+            } else if (s.equals("M+")) {
+                System.out.println("memory updated");
+            } else if (s.equals("MC")) {
+                System.out.println("memory cleared");
+            } else if (s.equals("MRC")) {
+                System.out.println(memory);
             } else {
                 System.out.println(displayNum);
             }
