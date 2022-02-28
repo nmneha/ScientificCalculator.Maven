@@ -7,6 +7,7 @@ public class Basic {
         return d + d2;
     }
     public double sub(double d, double d2) {
+
         return d - d2;
     }
     public double mul(double d, double d2) {

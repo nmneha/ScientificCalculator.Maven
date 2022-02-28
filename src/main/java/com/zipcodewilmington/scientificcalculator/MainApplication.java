@@ -14,10 +14,20 @@ public class MainApplication {
     public static void main(String[] args) {
         Scientific scientificCalc = new Scientific();
         Basic basicCalculator = new Basic();
-        String s = "on";
-        while (!s.equals("off")) {
+        String s = Console.getStringInput("ON/OFF");
+        while (!s.equals("OFF")) {
             Console.println("Welcome to my calculator!");
-            s = Console.getStringInput("Enter a command: add, subtract, multiply, divide,");
+           s = Console.getStringInput("Enter a command: " +
+                    "add, " +
+                    "subtract, " +
+                    "multiply, " +
+                    "divide, " +
+                    "rad, " +
+                    "deg, " +
+                    "san, " +
+                    "cos, " +
+                    "tan, " +
+                    "OFF.");
             // Integer i = Console.getIntegerInput("Enter an integer");
             double d = Console.getDoubleInput("Enter a double.");
             double d2 = Console.getDouble2Input("Enter a double.");
@@ -47,6 +57,12 @@ public class MainApplication {
                 displayNum = basicCalculator.pow(d, d2);
             } else if (s.equals("sin")) {
                 displayNum = scientificCalc.sin(d);
+            } else if (s.equals("cos")) {
+                displayNum = scientificCalc.cos(d);
+            } else if (s.equals("tan")) {
+                displayNum = scientificCalc.tan(d);
+            } else if (s.equals("!")) {
+                displayNumBig = scientificCalc.factorial(d);
             } else if (s.equals("rad")) {
                 radDeg = 0;
             } else if (s.equals("deg")) {
@@ -55,14 +71,23 @@ public class MainApplication {
                 displayNum = 7;
             }
 
+
             if (displayNum == Infinity) {
                 System.out.println("err");
             } else if (Double.isNaN(displayNum)) {
                 System.out.println("err");
+            } else if (s.equals("!")) {
+                System.out.println(displayNumBig);
             } else {
                 System.out.println(displayNum);
             }
+
+            if (s.equals("OFF")) {
+                break;
+            }
+
         }
+
     }
 }
 
